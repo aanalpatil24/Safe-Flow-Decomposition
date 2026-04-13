@@ -1,0 +1,32 @@
+Safe-Flow-Decomposition/
+├── include/
+│   ├── baseline/
+│   │   ├── baseline_graph.hpp
+│   │   └── baseline_spfa.hpp      <-- (Keep for Flow comparison)
+│   ├── graphs/
+│   │   ├── aligned_allocator.hpp
+│   │   ├── concurrent_queue.hpp
+│   │   ├── csr_graph.hpp
+│   │   ├── graph_builder.hpp
+│   │   ├── safe_flow.hpp          <-- (The Star of this Repo)
+│   │   ├── spfa_engine.hpp
+│   │   ├── thread_pool.hpp
+│   │   └── types.hpp
+│   └── simd/
+│       └── avx512_utils.hpp
+├── src/
+│   ├── concurrent_queue.cpp
+│   ├── csr_graph.cpp
+│   ├── graph_builder.cpp
+│   ├── spfa_engine.cpp
+│   ├── thread_pool.cpp
+│   └── simd/
+│       └── avx512_utils.cpp
+├── benchmarks/
+│   └── benchmark_safe_flow.cpp
+├── tests/
+│   ├── test_main.cpp
+│   ├── test_csr_graph.cpp
+│   └── test_safe_flow.cpp
+├── CMakeLists.txt
+└── README.md
