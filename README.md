@@ -10,7 +10,7 @@ In quantitative network analysis, decomposing a flow network into a set of safe,
 - **Bottleneck Analysis**: Uses a vectorized SPFA (Shortest Path Faster Algorithm) to rapidly locate bottleneck edges and saturate them in parallel.
 - **Zero-Copy Residual Tracking**: Maintains residual capacity states using bitmask-driven updates, preserving the cache-aligned integrity of the underlying hardware-optimized graph.
 
-## 🛠️ Performance Architecture
+## Performance Architecture
 
 To achieve extreme throughput, this application is built on a specialized infrastructure designed for modern x86_64 CPUs:
 
@@ -20,15 +20,15 @@ To achieve extreme throughput, this application is built on a specialized infras
 
 ---
 
-# 1. Build the application and benchmarks
+## 1. Build the application and benchmarks
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 
-# 2. Run the Safe Flow Benchmark
-# Validates the 3-4x speedup claim against the scalar baseline
+## 2. Run the Safe Flow Benchmark
+### Validates the 3-4x speedup claim against the scalar baseline
 ./benchmarks/benchmark_safe_flow
 
-# 3. Run Correctness Tests
-# Ensures flow conservation and path independence
+## 3. Run Correctness Tests
+### Ensures flow conservation and path independence
 ./tests/graph_tests --gtest_filter=SafeFlowTest.*
